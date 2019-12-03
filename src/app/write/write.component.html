@@ -1,1 +1,8 @@
-<p>write works!</p>
+<ngx-codemirror
+  [(ngModel)]="content"
+  [options]="{
+    lineNumbers: true,
+    theme: 'eclipse',
+    mode: 'javascript'
+  }"
+></ngx-codemirror>

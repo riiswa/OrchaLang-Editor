@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import 'node_modules/codemirror/mode/javascript/javascript.js';
+import 'node_modules/codemirror/mode/markdown/markdown.js';
+
 
 @Component({
   selector: 'app-write',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./write.component.css']
 })
 export class WriteComponent implements OnInit {
+  content: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }
