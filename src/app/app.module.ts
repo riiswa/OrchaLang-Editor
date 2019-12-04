@@ -11,6 +11,12 @@ import { ExplorerComponent } from './explorer/explorer.component';
 import { MenuComponent } from './menu/menu.component';
 import { WriteComponent } from './write/write.component';
 import { ConsoleComponent } from './console/console.component';
+import {FormsModule} from '@angular/forms';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { CookieService } from 'ngx-cookie-service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,9 +31,11 @@ import { ConsoleComponent } from './console/console.component';
     BrowserModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule,
+    CodemirrorModule,
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

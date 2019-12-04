@@ -25,9 +25,18 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "node_modules/codemirror/lib/codemirror.css",
+              "node_modules/codemirror/theme/eclipse.css",
+              "src/styles.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/codemirror/mode/javascript/javascript.js",
+              "node_modules/codemirror/mode/markdown/markdown.js"
+            ]
           },
           "configurations": {
             "production": {

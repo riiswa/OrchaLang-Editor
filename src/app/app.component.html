@@ -6,13 +6,16 @@
 </head>
 <body>
   <h1>{{ title }}</h1>
-  <app-log></app-log>
-  <app-explorer></app-explorer>
-  <app-menu></app-menu>
-  <app-write></app-write>
-  <app-console></app-console>
-  <div class="alert alert-primary" role="alert">
-    Bootstrap test
+  <div class="row">
+    <div class="col-12"><app-log></app-log></div>
+    <div class="col-3"><app-explorer></app-explorer></div>
+
+    <div class="row col-9">
+      <div class="col-12"><app-menu></app-menu></div>
+      <div class="col-12"><app-write></app-write></div>
+      <div class="col-12"><app-console></app-console></div>
+    </div>
+
   </div>
 </body>
 </html>
