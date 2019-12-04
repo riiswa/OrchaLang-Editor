@@ -13,6 +13,7 @@ import { WriteComponent } from './write/write.component';
 import { ConsoleComponent } from './console/console.component';
 import {FormsModule} from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -33,9 +34,8 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
     ModalModule.forRoot(),
     FormsModule,
     CodemirrorModule,
-
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
