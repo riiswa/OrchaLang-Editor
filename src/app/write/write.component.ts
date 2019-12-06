@@ -4,7 +4,6 @@ import {CookieService} from 'ngx-cookie-service';
 
 import 'src/assets/js/orchalang.js';
 
-
 @Component({
   selector: 'app-write',
   templateUrl: './write.component.html',
