@@ -1,9 +1,11 @@
+
+
 <ngx-codemirror
   [(ngModel)]="content"
   [options]="{
     lineNumbers: true,
     theme: 'eclipse',
-    mode: 'javascript',
+    mode: 'orchalang',
     lineWrapping: true
   }"
   (ngModelChange)="onChange()"
