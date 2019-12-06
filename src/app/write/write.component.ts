@@ -11,8 +11,7 @@ import 'src/assets/js/orchalang.js';
   styleUrls: ['./write.component.css']
 })
 export class WriteComponent implements OnInit {
-  cookieName: 'orchalang_editor_content'
-
+  cookieName: 'orchalang_editor_content';
 
   constructor(private codeService: CodeService, private cookieService: CookieService) {}
 
