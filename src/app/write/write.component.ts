@@ -13,7 +13,6 @@ import 'node_modules/codemirror/addon/hint/anyword-hint.js';
 
 import * as CodeMirror from 'codemirror';
 
-
 @Component({
   selector: 'app-write',
   templateUrl: './write.component.html',
@@ -21,11 +20,10 @@ import * as CodeMirror from 'codemirror';
 })
 export class WriteComponent implements OnInit, AfterViewInit {
   cm: object;
-  cookieName = 'orchalang_editor_content';
   fullScreen = false;
   options: any =  {
     lineNumbers: true,
-    theme: 'eclipse',
+    theme: 'elegant',
     mode: 'orchalang',
     lineWrapping: true,
     extraKeys: {
@@ -75,5 +73,13 @@ export class WriteComponent implements OnInit, AfterViewInit {
     };
     // @ts-ignore
     this.cm.showHint({hint: CodeMirror.hint.anyword});
+  }
+  toLight() {
+    // @ts-ignore
+    this.cm.setOption('theme', 'elegant');
+  }
+  toDark() {
+    // @ts-ignore
+    this.cm.setOption('theme', 'midnight');
   }
 }
