@@ -43,7 +43,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
       'Ctrl-Space': 'autocomplete'
     }
   };
-  constructor(private codeService: CodeService, private cookieService: CookieService) {}
+  constructor(public codeService: CodeService, private cookieService: CookieService) {}
 
   ngOnInit() {
     if (this.cookieService.check(this.cookieName)) {
