@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
-import {CookieService} from 'ngx-cookie-service';
 
 import 'src/assets/js/orchalang.js';
 import 'node_modules/codemirror/addon/search/search.js';
@@ -43,18 +42,15 @@ export class WriteComponent implements OnInit, AfterViewInit {
       'Ctrl-Space': 'autocomplete'
     }
   };
-  constructor(public codeService: CodeService, private cookieService: CookieService) {}
+
+  constructor(public codeService: CodeService) {}
 
   ngOnInit() {
-    if (this.cookieService.check(this.cookieName)) {
-      this.codeService.content = this.cookieService.get(this.cookieName);
-    } else {
-      this.cookieService.set(this.cookieName, this.codeService.content);
-    }
   }
 
   onChange() {
-    this.cookieService.set(this.cookieName, this.codeService.content);
+    this.codeService.updateCookie();
+    this.codeService.files[this.codeService.selectedFile].content = this.codeService.content;
   }
 
   ngAfterViewInit(): void {

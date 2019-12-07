@@ -1,0 +1,15 @@
+ul {
+  padding: 0 0 0 5px;
+  list-style-type: none;
+}
+input[type="text"]
+{
+  padding: 0 0 0 5px;
+  background: transparent;
+  border: none;
+  width: fit-content;
+}
+
+.btn {
+  border-radius:unset!important;
+}
