@@ -42,6 +42,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
       'Ctrl-Space': 'autocomplete'
     }
   };
+
   constructor(public codeService: CodeService) {}
 
   ngOnInit() {
