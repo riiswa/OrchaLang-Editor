@@ -2,12 +2,7 @@
 
 <ngx-codemirror
   [(ngModel)]="codeService.content"
-  [options]="{
-    lineNumbers: true,
-    theme: 'eclipse',
-    mode: 'orchalang',
-    lineWrapping: true
-  }"
+  [options]="options"
   (ngModelChange)="onChange()"
 ></ngx-codemirror>
 
