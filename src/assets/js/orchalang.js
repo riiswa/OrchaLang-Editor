@@ -18,8 +18,8 @@ function arrayContains(needle, arrhaystack) {
 
   CodeMirror.defineMode("orchalang", function (conf) {
     var keywords = ["receive", "from", "compute", "when", "send", "to", "with", "condition"];
-    var keywords2 = ["terminates", "fails"]
-    var logicalOperator = ["and", "or", "not"]
+    var keywords2 = ["terminates", "fails"];
+    var logicalOperator = ["and", "or", "not"];
     return {
       token: function (stream, state) {
         stream.eatWhile(/\w/);
