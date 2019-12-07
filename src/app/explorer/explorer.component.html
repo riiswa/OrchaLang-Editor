@@ -5,7 +5,7 @@
 
 <ul class="bg-dark">
   <li *ngFor="let file of this.codeService.files">
-      <button type="button" class="btn btn-dark d-flex justify-content-center p-0"  [class.active]="codeService.files.indexOf(file) === codeService.selectedFile"
+      <button type="button" class="btn btn-dark d-flex justify-content-between p-0 w-100"  [class.active]="codeService.files.indexOf(file) === codeService.selectedFile"
       (click)="codeService.selectedFile = codeService.files.indexOf(file); codeService.content = file.content">
           <input class="text-light" type="text" maxlength="20" value="{{file.name}}" ngModel="{{ file.name }}"
                  (ngModelChange)="onChangeField($event, codeService.files.indexOf(file))">
