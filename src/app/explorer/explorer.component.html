@@ -1,1 +1,15 @@
-<p>explorer works!</p>
+<div class="d-flex bg-dark text-light justify-content-around btn-sm">
+  <p class="navbar-brand">Files explorer</p>
+  <button class="btn btn-dark h-25" (click)="this.codeService.add()">+</button>
+</div>
+
+<ul class="bg-dark">
+  <li *ngFor="let file of this.codeService.files">
+      <button type="button" class="btn btn-dark d-flex justify-content-center p-0"  [class.active]="codeService.files.indexOf(file) === codeService.selectedFile"
+      (click)="codeService.selectedFile = codeService.files.indexOf(file); codeService.content = file.content">
+          <input class="text-light" type="text" maxlength="20" value="{{file.name}}" ngModel="{{ file.name }}"
+                 (ngModelChange)="onChangeField($event, codeService.files.indexOf(file))">
+          <button class="btn btn-dark btn-sm" (click)="this.codeService.delete(codeService.files.indexOf(file))">×</button>
+      </button>
+  </li>
+</ul>
