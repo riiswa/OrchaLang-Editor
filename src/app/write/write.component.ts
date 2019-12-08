@@ -20,7 +20,6 @@ import * as CodeMirror from 'codemirror';
 })
 export class WriteComponent implements OnInit, AfterViewInit {
   cm: object;
-  fullScreen = false;
   options: any =  {
     lineNumbers: true,
     theme: 'elegant',
@@ -40,6 +39,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
       'Ctrl-Space': 'autocomplete'
     }
   };
+  badgesIsEnable = true;
 
   constructor(public codeService: CodeService) {}
 
@@ -81,5 +81,16 @@ export class WriteComponent implements OnInit, AfterViewInit {
   toDark() {
     // @ts-ignore
     this.cm.setOption('theme', 'midnight');
+  }
+
+  fullScreen() {
+    // @ts-ignore
+    if (!this.cm.getOption('fullScreen')) {
+      // @ts-ignore
+      this.cm.setOption('fullScreen', true);
+    } else {
+      // @ts-ignore
+      this.cm.setOption('fullScreen', false);
+    }
   }
 }

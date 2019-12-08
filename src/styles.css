@@ -3,13 +3,9 @@
 .CodeMirror {
   height: fit-content!important;
   width: auto;
-  max-width: calc(100vw - 240px);
-}
-
-@media only screen and (max-width: 576px) {
-  .CodeMirror {
-    max-width: 100vw;
-  }
+  max-width: 100%;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
 }
 
 .navbar-toggler {

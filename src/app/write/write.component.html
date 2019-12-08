@@ -3,5 +3,15 @@
   [options]="options"
   (ngModelChange)="onChange()"
 ></ngx-codemirror>
-<span class="badge badge-warning" (click)="toLight()">Light mode</span>
-<span class="badge badge-dark" (click)="toDark()">Dark mode</span>
+
+<div class="badges d-flex">
+  <a class="badge badge-info text-light" (click)="badgesIsEnable = true" href="#"><i class="fa fa-arrow-left" *ngIf="!badgesIsEnable"></i></a>
+  <a class="badge badge-danger text-light" (click)="badgesIsEnable = false" href="#"><i class="fa fa-times" *ngIf="badgesIsEnable"></i></a>
+  <div *ngIf="badgesIsEnable">
+    <a class="badge badge-warning text-light" (click)="toLight()" id="lightButton" href="#">Light mode</a>
+    <a class="badge badge-dark text-light" (click)="toDark()" id="darkButton" href="#">Dark mode</a>
+    <a class="badge badge-secondary text-light" (click)="fullScreen()" id="fullScreenButton" href="#">Full screen</a>
+  </div>
+
+</div>
+
