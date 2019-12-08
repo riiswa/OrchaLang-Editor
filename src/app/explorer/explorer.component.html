@@ -1,15 +1,19 @@
-<div class="d-flex bg-dark text-light justify-content-between btn-sm">
-  <p class="navbar-brand">Files explorer</p>
-  <button class="btn btn-dark h-25" (click)="this.codeService.add()">+</button>
-</div>
+<button class="btn btn-dark btn-sm" *ngIf="!visible" (click)="visible = true"><i class="fa fa-arrow-right"></i></button>
+<div *ngIf="visible">
+  <div class="d-flex bg-dark text-light justify-content-between btn-sm">
+    <button class="btn btn-dark h-25" (click)="visible = false"><i class="fa fa-arrow-left"></i></button>
+    <p class="navbar-brand">Files explorer</p>
+    <button class="btn btn-dark h-25" (click)="this.codeService.add()"><i class="fa fa-plus"></i></button>
+  </div>
 
-<ul class="bg-dark">
-  <li *ngFor="let file of this.codeService.files">
-      <button type="button" class="btn btn-dark d-flex justify-content-between p-0 w-100"  [class.active]="codeService.files.indexOf(file) === codeService.selectedFile"
-      (click)="codeService.selectedFile = codeService.files.indexOf(file); codeService.content = file.content">
-          <input class="text-light" type="text" maxlength="20" value="{{file.name}}" ngModel="{{ file.name }}"
-                 (ngModelChange)="onChangeField($event, codeService.files.indexOf(file))">
-          <button class="btn btn-dark btn-sm" (click)="this.codeService.delete(codeService.files.indexOf(file))">×</button>
-      </button>
-  </li>
-</ul>
+  <ul class="bg-dark">
+    <li *ngFor="let file of this.codeService.files">
+        <button type="button" class="btn btn-dark d-flex justify-content-between p-0 w-100"  [class.active]="codeService.files.indexOf(file) === codeService.selectedFile"
+        (click)="codeService.selectedFile = codeService.files.indexOf(file); codeService.content = file.content">
+            <input class="text-light" type="text" maxlength="20" value="{{file.name}}" ngModel="{{ file.name }}"
+                   (ngModelChange)="onChangeField($event, codeService.files.indexOf(file))">
+            <button class="btn btn-dark btn-sm" (click)="this.codeService.delete(codeService.files.indexOf(file))"><i class="fa fa-times"></i></button>
+        </button>
+    </li>
+  </ul>
+</div>

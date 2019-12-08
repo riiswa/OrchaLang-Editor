@@ -14,8 +14,7 @@ import { ConsoleComponent } from './console/console.component';
 import {FormsModule} from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { CookieService } from 'ngx-cookie-service';
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -34,6 +33,7 @@ import { CookieService } from 'ngx-cookie-service';
     ModalModule.forRoot(),
     FormsModule,
     CodemirrorModule,
+    BrowserAnimationsModule,
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

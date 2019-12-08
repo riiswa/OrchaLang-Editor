@@ -4,9 +4,10 @@ import {CodeService} from '../code.service';
 @Component({
   selector: 'app-explorer',
   templateUrl: './explorer.component.html',
-  styleUrls: ['./explorer.component.css']
+  styleUrls: ['./explorer.component.css'],
 })
 export class ExplorerComponent implements OnInit {
+  visible = true;
 
   constructor(public codeService: CodeService) { }
 
