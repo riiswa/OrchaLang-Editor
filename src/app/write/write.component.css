@@ -1,1 +1,12 @@
+.badges {
+  padding: 5px;
+  z-index: 10;
+  float: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 
+.badge {
+  margin-left: 3px;
+}

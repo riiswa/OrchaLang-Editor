@@ -1,8 +1,8 @@
-<button class="btn btn-dark btn-sm" *ngIf="!visible" (click)="visible = true"><i class="fa fa-arrow-right"></i></button>
+<button class="btn btn-dark btn-sm" *ngIf="!visible" (click)="visible = true"><span>File explorer </span><i class="fa fa-arrow-right"></i></button>
 <div *ngIf="visible">
   <div class="d-flex bg-dark text-light justify-content-between btn-sm">
     <button class="btn btn-dark h-25" (click)="visible = false"><i class="fa fa-arrow-left"></i></button>
-    <p class="navbar-brand">Files explorer</p>
+    <p class="navbar-brand">File explorer</p>
     <button class="btn btn-dark h-25" (click)="this.codeService.add()"><i class="fa fa-plus"></i></button>
   </div>
 
