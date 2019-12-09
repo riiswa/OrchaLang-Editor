@@ -23,7 +23,7 @@ export class CodeService {
     }
 
     if (this.files.length === 0) {
-      this.files.push({name: 'new_file.orcha', content: ''});
+      this.files.push({name: 'untitled.orcha', content: ''});
     }
     this.content = this.files[this.selectedFile].content;
   }
@@ -36,13 +36,12 @@ export class CodeService {
     this.files.splice(id, 1);
     this.selectedFile = 0;
     if (this.files.length === 0) {
-      this.files.push({name: 'new_file.orcha', content: ''});
+      this.files.push({name: 'untitled.orcha', content: ''});
     }
     this.content = this.files[0].content;
   }
 
   add() {
-    this.files.unshift({name: 'new_file.orcha', content: ''});
-
+    this.files.unshift({name: 'untitled.orcha', content: ''});
   }
 }
