@@ -1,9 +1,9 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
-function arrayContains(needle, arrhaystack) {
+function arrayContains(needle, arraystack) {
   var lower = needle.toLowerCase();
-  return (arrhaystack.indexOf(lower) > -1);
+  return (arraystack.indexOf(lower) > -1);
 }
 
 (function (mod) {
@@ -27,8 +27,7 @@ function arrayContains(needle, arrhaystack) {
           return "keyword";
         } else if (arrayContains(stream.current(), keywords2)) {
           return "variable-2";
-        }
-        else if (arrayContains(stream.current(), logicalOperator)) {
+        } else if (arrayContains(stream.current(), logicalOperator)) {
           return "atom";
         }
         stream.next();

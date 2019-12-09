@@ -10,6 +10,8 @@ import 'node_modules/codemirror/addon/display/fullscreen.js';
 import 'node_modules/codemirror/addon/hint/show-hint';
 import 'node_modules/codemirror/addon/hint/javascript-hint';
 import 'node_modules/codemirror/addon/hint/anyword-hint.js';
+import 'node_modules/codemirror/addon/lint/lint.js';
+import 'src/assets/js/orchalang-lint.js';
 
 import * as CodeMirror from 'codemirror';
 
@@ -20,11 +22,13 @@ import * as CodeMirror from 'codemirror';
 })
 export class WriteComponent implements OnInit, AfterViewInit {
   cm: object;
-  options: any =  {
+  options: any = {
     lineNumbers: true,
     theme: 'elegant',
     mode: 'orchalang',
     lineWrapping: true,
+    gutters: ['CodeMirror-lint-markers'],
+    lint: true,
     extraKeys: {
       F11(cm) {
         if (!cm.getOption('fullScreen')) {
@@ -34,14 +38,17 @@ export class WriteComponent implements OnInit, AfterViewInit {
         }
       },
       Esc(cm) {
-        if (cm.getOption('fullScreen')) { cm.setOption('fullScreen', false); }
+        if (cm.getOption('fullScreen')) {
+          cm.setOption('fullScreen', false);
+        }
       },
       'Ctrl-Space': 'autocomplete'
     }
   };
   badgesIsEnable = true;
 
-  constructor(public codeService: CodeService) {}
+  constructor(public codeService: CodeService) {
+  }
 
   ngOnInit() {
   }
@@ -74,10 +81,12 @@ export class WriteComponent implements OnInit, AfterViewInit {
     // @ts-ignore
     this.cm.showHint({hint: CodeMirror.hint.anyword});
   }
+
   toLight() {
     // @ts-ignore
     this.cm.setOption('theme', 'elegant');
   }
+
   toDark() {
     // @ts-ignore
     this.cm.setOption('theme', 'midnight');

@@ -13,6 +13,7 @@ export class CodeService {
   selectedFile = 0;
 
   content: string;
+
   constructor(private cookieService: CookieService) {
 
     if (this.cookieService.check(this.cookieName)) {
@@ -34,7 +35,9 @@ export class CodeService {
   delete(id) {
     this.files.splice(id, 1);
     this.selectedFile = 0;
-    if (this.files.length === 0) {this.files.push({name: 'new_file.orcha', content: ''}); }
+    if (this.files.length === 0) {
+      this.files.push({name: 'new_file.orcha', content: ''});
+    }
     this.content = this.files[0].content;
   }
 
