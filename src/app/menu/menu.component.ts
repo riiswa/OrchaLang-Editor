@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
 
 
@@ -9,7 +9,8 @@ import {CodeService} from '../code.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private codeService: CodeService) { }
+  constructor(private codeService: CodeService) {
+  }
 
   ngOnInit() {
   }

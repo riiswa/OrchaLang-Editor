@@ -32,7 +32,8 @@
               "node_modules/codemirror/addon/dialog/dialog.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/codemirror/addon/hint/show-hint.css",
-              "src/assets/fonts/FiraCode/fira_code.css"
+              "src/assets/fonts/FiraCode/fira_code.css",
+              "node_modules/codemirror/addon/lint/lint.css"
             ],
             "scripts": [
               "node_modules/codemirror/lib/codemirror.js",
@@ -134,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "OrchaLang-Editor"
 }

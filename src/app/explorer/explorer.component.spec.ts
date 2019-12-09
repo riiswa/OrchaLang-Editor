@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ExplorerComponent } from './explorer.component';
+import {ExplorerComponent} from './explorer.component';
 
 describe('ExplorerComponent', () => {
   let component: ExplorerComponent;
@@ -8,9 +8,9 @@ describe('ExplorerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExplorerComponent ]
+      declarations: [ExplorerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

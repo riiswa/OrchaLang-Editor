@@ -5,8 +5,10 @@
 ></ngx-codemirror>
 
 <div class="badges d-flex">
-  <a class="badge badge-info text-light" (click)="badgesIsEnable = true" href="#"><i class="fa fa-arrow-left" *ngIf="!badgesIsEnable"></i></a>
-  <a class="badge badge-danger text-light" (click)="badgesIsEnable = false" href="#"><i class="fa fa-times" *ngIf="badgesIsEnable"></i></a>
+  <a class="badge badge-info text-light" (click)="badgesIsEnable = true" href="#"><i class="fa fa-arrow-left"
+                                                                                     *ngIf="!badgesIsEnable"></i></a>
+  <a class="badge badge-danger text-light" (click)="badgesIsEnable = false" href="#"><i class="fa fa-times"
+                                                                                        *ngIf="badgesIsEnable"></i></a>
   <div *ngIf="badgesIsEnable">
     <a class="badge badge-warning text-light" (click)="toLight()" id="lightButton" href="#">Light mode</a>
     <a class="badge badge-dark text-light" (click)="toDark()" id="darkButton" href="#">Dark mode</a>

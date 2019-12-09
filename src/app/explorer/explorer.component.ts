@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
 
 @Component({
@@ -9,7 +9,8 @@ import {CodeService} from '../code.service';
 export class ExplorerComponent implements OnInit {
   visible = false;
 
-  constructor(public codeService: CodeService) { }
+  constructor(public codeService: CodeService) {
+  }
 
   ngOnInit() {
   }

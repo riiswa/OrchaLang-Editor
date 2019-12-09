@@ -2,8 +2,8 @@ ul {
   padding: 0;
   list-style-type: none;
 }
-input[type="text"]
-{
+
+input[type="text"] {
   padding: 0 0 0 5px;
   background: transparent;
   border: none;
@@ -11,6 +11,6 @@ input[type="text"]
 }
 
 .btn {
-  border-radius: unset!important;
-  border: unset!important;
+  border-radius: unset !important;
+  border: unset !important;
 }
