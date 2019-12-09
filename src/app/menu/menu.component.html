@@ -7,8 +7,9 @@
         <i class="fa fa-files-o text-light"></i> File
       </a>
       <div class="dropdown-menu no-border">
-        <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-file"></i> New <span
-          class="text-muted small d-none d-md-inline">Ctrl+N</span></a>
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.add()">
+          <i class="fa fa-file"></i>New <span class="text-muted small d-none d-md-inline">Ctrl+N</span>
+        </a>
         <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-folder-open"></i> Open <span
           class="text-muted small d-none d-md-inline">Ctrl+O</span></a>
         <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-save"></i> Save <span

@@ -24,7 +24,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
   cm: object;
   options: any = {
     lineNumbers: true,
-    theme: 'elegant',
+    theme: 'eclipse',
     mode: 'orchalang',
     lineWrapping: true,
     gutters: ['CodeMirror-lint-markers'],
