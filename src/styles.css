@@ -20,3 +20,12 @@
   height: auto!important;
   z-index: 9;
 }
+
+.terminal-outer {
+  height: 300px!important;
+  border: unset!important;
+}
+
+.xterm .xterm-viewport {
+  overflow: hidden!important;
+}
