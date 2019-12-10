@@ -16,6 +16,7 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { CookieService } from 'ngx-cookie-service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { NgTerminalModule } from 'ng-terminal';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     CodemirrorModule,
     BrowserAnimationsModule,
+    NgTerminalModule,
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

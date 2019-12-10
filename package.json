@@ -25,6 +25,7 @@
     "codemirror": "^5.49.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
+    "ng-terminal": "^2.3.0",
     "ngx-bootstrap": "^5.2.0",
     "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.4.0",
