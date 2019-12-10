@@ -7,7 +7,7 @@ import {CodeService} from '../code.service';
   styleUrls: ['./explorer.component.css'],
 })
 export class ExplorerComponent implements OnInit {
-  visible = false;
+  visible = true;
 
   constructor(public codeService: CodeService) {
   }

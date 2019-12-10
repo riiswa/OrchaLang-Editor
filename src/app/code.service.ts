@@ -42,6 +42,8 @@ export class CodeService {
   }
 
   add() {
+    this.selectedFile = 0;
     this.files.unshift({name: 'untitled.orcha', content: ''});
+    this.content = this.files[0].content;
   }
 }
