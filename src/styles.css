@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .CodeMirror {
-  height: fit-content!important;
+  height: 100%!important;
   width: auto;
   max-width: 100%;
   font-family: "Fira Code", monospace;
