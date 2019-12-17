@@ -14,9 +14,9 @@
           class="text-muted small d-none d-md-inline">Ctrl+O</span></a>
         <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-save"></i> Save <span
           class="text-muted small d-none d-md-inline">Ctrl+S</span></a>
-        <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-file-download"></i> Export <span
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.save()"><i class="fa fa-file-download"></i> Export <span
           class="text-muted small d-none d-md-inline">Ctrl+E</span></a>
-        <a class="dropdown-item bg-dark text-light" href="#"><i class="fa fa-download"></i> Export all <span
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.saveAll()"><i class="fa fa-download"></i> Export all <span
           class="text-muted small d-none d-md-inline">Ctrl+Maj+E</span></a>
       </div>
 
