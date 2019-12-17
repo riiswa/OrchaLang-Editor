@@ -46,4 +46,22 @@ export class CodeService {
     this.files.unshift({name: 'untitled.orcha', content: ''});
     this.content = this.files[0].content;
   }
+  private download(filename, text) {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+  save() {
+    this.download(this.files[this.selectedFile].name, this.content);
+  }
+  saveAll() {
+    this.files.forEach( file => this.download(file.name, file.content));
+  }
 }
