@@ -72,23 +72,28 @@ export class CodeService {
   open() {
     const input = document.createElement('input');
     input.type = 'file';
+    input.accept = '.orcha';
 
     input.onchange = (e: any) => {
 
       // getting a hold of the file reference
       const file = e.target.files[0];
+      const extension: string = file.name.split('.')[1]; // splitting file name, [0] = name (without extension), [1] = extension
+      if (extension === 'orcha') {
+        // setting up the reader
+        const reader = new FileReader();
+        reader.readAsText(file,'UTF-8');
 
-      // setting up the reader
-      const reader = new FileReader();
-      reader.readAsText(file,'UTF-8');
-
-      // here we tell the reader what to do when it's done reading...
-      reader.onload = (readerEvent) => {
-        const target: any = readerEvent.target; // forcer le typage en any pour eviter les erreur de compilateur provoque par ts
-        const filecontent = target.result;
-        const filename = file.name;
-        this.addFileByName(filename, filecontent);
-      };
+        // here we tell the reader what to do when it's done reading...
+        reader.onload = (readerEvent) => {
+          const target: any = readerEvent.target; // forcer le typage en any pour eviter les erreur de compilateur provoque par ts
+          const filecontent = target.result;
+          const filename = file.name;
+          this.addFileByName(filename, filecontent);
+        };
+      } else {
+        alert('Wrong file type ! Please select a .orcha file');
+      }
     }
     input.click();
   }
