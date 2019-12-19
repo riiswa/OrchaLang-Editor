@@ -33,7 +33,7 @@ export class CodeService {
   }
 
   delete(id) {
-    if (confirm('Souhaitez-vous vraiment supprimer ce fichier ?') === true) { //confirm box when deleting files
+    if (confirm('Do you really want to delete this file ?') === true) { //confirm box when deleting files
       this.files.splice(id, 1);
       this.selectedFile = 0;
       if (this.files.length === 0) {
