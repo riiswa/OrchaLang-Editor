@@ -33,12 +33,14 @@ export class CodeService {
   }
 
   delete(id) {
-    this.files.splice(id, 1);
-    this.selectedFile = 0;
-    if (this.files.length === 0) {
-      this.files.push({name: 'untitled.orcha', content: ''});
+    if (confirm('Do you really want to delete this file ?') === true) { //confirm box when deleting files
+      this.files.splice(id, 1);
+      this.selectedFile = 0;
+      if (this.files.length === 0) {
+        this.files.push({name: 'untitled.orcha', content: ''});
+      }
+      this.content = this.files[0].content;
     }
-    this.content = this.files[0].content;
   }
 
   add() {
