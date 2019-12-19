@@ -33,7 +33,7 @@ export class CodeService {
   }
 
   delete(id) {
-    if (confirm('Do you really want to delete this file ?') === true) { //confirm box when deleting files
+    if (confirm('Do you really want to delete this file ?') === true) { // confirm box when deleting files
       this.files.splice(id, 1);
       this.selectedFile = 0;
       if (this.files.length === 0) {
@@ -84,7 +84,7 @@ export class CodeService {
       if (extension === 'orcha') {
         // setting up the reader
         const reader = new FileReader();
-        reader.readAsText(file,'UTF-8');
+        reader.readAsText(file, 'UTF-8');
 
         // here we tell the reader what to do when it's done reading...
         reader.onload = (readerEvent) => {
@@ -96,7 +96,7 @@ export class CodeService {
       } else {
         alert('Wrong file type ! Please select a .orcha file');
       }
-    }
+    };
     input.click();
   }
 }
