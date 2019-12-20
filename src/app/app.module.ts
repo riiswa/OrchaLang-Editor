@@ -15,6 +15,8 @@ import {FormsModule} from '@angular/forms';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { CookieService } from 'ngx-cookie-service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LayoutModule} from '@angular/cdk/layout';
+
 
 import { NgTerminalModule } from 'ng-terminal';
 
@@ -36,6 +38,7 @@ import { NgTerminalModule } from 'ng-terminal';
     CodemirrorModule,
     BrowserAnimationsModule,
     NgTerminalModule,
+    LayoutModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

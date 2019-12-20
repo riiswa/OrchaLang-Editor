@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-explorer',
@@ -9,7 +10,7 @@ import {CodeService} from '../code.service';
 export class ExplorerComponent implements OnInit {
   visible = true;
 
-  constructor(public codeService: CodeService) {
+  constructor(public codeService: CodeService, public breakpointObserver: BreakpointObserver) {
   }
 
   ngOnInit() {
