@@ -1,0 +1,3 @@
+[submodule "orchalang-server"]
+	path = orchalang-server
+	url = https://github.com/riiswa/orchalang-server
