@@ -19,6 +19,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 
 
 import { NgTerminalModule } from 'ng-terminal';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NgTerminalModule } from 'ng-terminal';
     CodemirrorModule,
     BrowserAnimationsModule,
     NgTerminalModule,
-    LayoutModule
+    LayoutModule,
+    HttpClientModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
+import {RunHandlerService} from '../run-handler.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {CodeService} from '../code.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public codeService: CodeService) {
+  constructor(public codeService: CodeService, public runHandler: RunHandlerService) {
   }
 
   ngOnInit() {
