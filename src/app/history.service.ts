@@ -14,17 +14,24 @@ export class HistoryService {
   constructor() {}
 
   undo() {
-    this.codeService.files = this.undoStack.pop();
-    this.redoStack.push(this.codeService.files);
+    if (! this.undoStack.isEmpty()) {
+      this.codeService.files = this.undoStack.pop();
+      this.redoStack.push(this.codeService.files);
+      console.log('UNDO');
+    }
   }
 
   redo() {
-    this.codeService.files = this.redoStack.pop();
-    this.undoStack.push(this.codeService.files);
+    if (! this.redoStack.isEmpty()) {
+      this.codeService.files = this.redoStack.pop();
+      this.undoStack.push(this.codeService.files);
+      console.log('REDO');
+    }
   }
 
   addStatusToUndoStack() {
     this.undoStack.push(this.codeService.files);
     this.redoStack = new Stack<FileObject[]>();
+    console.log('ADD IN STACK');
   }
 }
