@@ -27,10 +27,7 @@
 }
 
 .terminal-outer {
-  height: 300px!important;
+  height: 70vh!important;
   border: unset!important;
 }
 
-.xterm .xterm-viewport {
-  overflow: hidden!important;
-}
