@@ -30,6 +30,7 @@
     "ngx-bootstrap": "^5.2.0",
     "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.4.0",
+    "ts-data.stack": "^1.0.6",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
