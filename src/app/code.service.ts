@@ -4,6 +4,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {HistoryService} from './history.service';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,8 @@ export class CodeService {
 
   content: string;
 
-  constructor(private cookieService: CookieService, private historyService: HistoryService) {
+  constructor(public cookieService: CookieService, public historyService: HistoryService) {
+    this.historyService.codeService = this;
 
     if (this.cookieService.check(this.cookieName)) {
       this.files = JSON.parse(this.cookieService.get(this.cookieName));
