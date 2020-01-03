@@ -1,6 +1,7 @@
 import {Injectable, OnInit} from '@angular/core';
 import {FileObject} from './utils/File';
 import {CookieService} from 'ngx-cookie-service';
+import {HistoryService} from './history.service';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class CodeService {
 
   content: string;
 
-  constructor(private cookieService: CookieService) {
+  constructor(private cookieService: CookieService, private historyService: HistoryService) {
 
     if (this.cookieService.check(this.cookieName)) {
       this.files = JSON.parse(this.cookieService.get(this.cookieName));
@@ -30,6 +31,7 @@ export class CodeService {
 
   updateCookie() {
     this.cookieService.set(this.cookieName, JSON.stringify(this.files));
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
 
   delete(id) {
@@ -40,6 +42,7 @@ export class CodeService {
         this.files.push({name: 'untitled.orcha', content: ''});
       }
       this.content = this.files[0].content;
+      this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
     }
   }
 
@@ -47,11 +50,13 @@ export class CodeService {
     this.selectedFile = 0;
     this.files.unshift({name: 'untitled.orcha', content: ''});
     this.content = this.files[0].content;
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
   private addFileByName(filename, filecontent) {
     this.selectedFile = 0;
     this.files.unshift({name: filename, content: filecontent});
     this.content = this.files[0].content;
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
   private download(filename, text) {
     const element = document.createElement('a');
@@ -64,12 +69,16 @@ export class CodeService {
     element.click();
 
     document.body.removeChild(element);
+
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
   save() {
     this.download(this.files[this.selectedFile].name, this.content);
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
   saveAll() {
     this.files.forEach( file => this.download(file.name, file.content));
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
   open() {
     const input = document.createElement('input');
@@ -98,5 +107,6 @@ export class CodeService {
       }
     };
     input.click();
+    this.historyService.addStatusToUndoStack(); // Adding status for undo/redo Stacks
   }
 }
