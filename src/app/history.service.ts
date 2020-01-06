@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import Stack from 'ts-data.stack';
 import {FileObject} from './utils/File';
 import {CodeService} from './code.service';
+import * as cloneDeep from 'lodash/cloneDeep';
 
 @Injectable({
   providedIn: 'root'
@@ -15,16 +16,10 @@ export class HistoryService {
 
   undo() {
     if (! this.undoStack.isEmpty()) {
-      console.log(this.undoStack.count());
       this.redoStack.push(this.undoStack.pop());
-      console.log(this.undoStack.count());
       if (! this.undoStack.isEmpty()) {
-        console.log(this.codeService.files);
-        console.log(this.undoStack.peek());
-        this.codeService.files = this.undoStack.peek().slice();
-        console.log(this.codeService.files);
+        this.codeService.files = cloneDeep(this.undoStack.peek());
       }
-      console.log('UNDO');
     }
   }
 
@@ -32,13 +27,10 @@ export class HistoryService {
     if (! this.redoStack.isEmpty()) {
       this.undoStack.push(this.redoStack.pop());
       this.codeService.files = this.undoStack.peek();
-      console.log('REDO');
     }
   }
-
   addStatusToUndoStack() {
-    this.undoStack.push(this.codeService.files.slice());
+    this.undoStack.push(cloneDeep(this.codeService.files));
     this.redoStack = new Stack<FileObject[]>();
-    console.log('ADD IN STACK');
   }
 }

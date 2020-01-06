@@ -33,7 +33,6 @@ export class CodeService {
 
   updateCookie() {
     this.cookieService.set(this.cookieName, JSON.stringify(this.files));
-    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
 
   delete(id) {
@@ -71,15 +70,12 @@ export class CodeService {
     element.click();
 
     document.body.removeChild(element);
-    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   save() {
     this.download(this.files[this.selectedFile].name, this.content);
-    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   saveAll() {
     this.files.forEach( file => this.download(file.name, file.content));
-    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   open() {
     const input = document.createElement('input');
@@ -108,6 +104,5 @@ export class CodeService {
       }
     };
     input.click();
-    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
 }

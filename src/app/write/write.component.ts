@@ -14,6 +14,7 @@ import 'node_modules/codemirror/addon/lint/lint.js';
 import 'src/assets/js/orchalang-lint.js';
 
 import * as CodeMirror from 'codemirror';
+import {HistoryService} from '../history.service';
 
 @Component({
   selector: 'app-write',
@@ -47,7 +48,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
   };
   badgesIsEnable = true;
 
-  constructor(public codeService: CodeService) {
+  constructor(public codeService: CodeService, public historyService: HistoryService) {
   }
 
   ngOnInit() {
