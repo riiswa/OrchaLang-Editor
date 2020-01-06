@@ -2,6 +2,7 @@
   [(ngModel)]="codeService.content"
   [options]="options"
   (ngModelChange)="onChange()"
+  (click)="historyService.addStatusToUndoStack()"
 ></ngx-codemirror>
 
 <div class="badges d-flex">

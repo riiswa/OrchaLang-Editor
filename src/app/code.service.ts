@@ -1,6 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import {FileObject} from './utils/File';
 import {CookieService} from 'ngx-cookie-service';
+import {HistoryService} from './history.service';
+
 
 
 @Injectable({
@@ -14,7 +16,8 @@ export class CodeService {
 
   content: string;
 
-  constructor(private cookieService: CookieService) {
+  constructor(public cookieService: CookieService, public historyService: HistoryService) {
+    this.historyService.codeService = this;
 
     if (this.cookieService.check(this.cookieName)) {
       this.files = JSON.parse(this.cookieService.get(this.cookieName));
@@ -40,6 +43,7 @@ export class CodeService {
         this.files.push({name: 'untitled.orcha', content: ''});
       }
       this.content = this.files[0].content;
+      this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
     }
   }
 
@@ -47,11 +51,13 @@ export class CodeService {
     this.selectedFile = 0;
     this.files.unshift({name: 'untitled.orcha', content: ''});
     this.content = this.files[0].content;
+    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   private addFileByName(filename, filecontent) {
     this.selectedFile = 0;
     this.files.unshift({name: filename, content: filecontent});
     this.content = this.files[0].content;
+    this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   private download(filename, text) {
     const element = document.createElement('a');

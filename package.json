@@ -26,10 +26,12 @@
     "codemirror": "^5.49.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
+    "lodash.clonedeep": "^4.5.0",
     "ng-terminal": "^2.3.0",
     "ngx-bootstrap": "^5.2.0",
     "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.4.0",
+    "ts-data.stack": "^1.0.6",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
