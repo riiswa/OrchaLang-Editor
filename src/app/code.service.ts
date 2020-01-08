@@ -60,16 +60,16 @@ export class CodeService {
     this.historyService.addStatusToUndoStack(); // Adding to the redo/undo stack
   }
   private download(filename, text) {
-    const element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
+    const element = document.createElement('a'); // créer un elmnt html type a
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text)); // lui donner certains attribut et son contenu
+    element.setAttribute('download', filename); // lui donner son nom pour la propriété de download
 
-    element.style.display = 'none';
-    document.body.appendChild(element);
+    element.style.display = 'none'; // empecher de l'afficher dans la vue
+    document.body.appendChild(element); // ajouter au document
 
-    element.click();
+    element.click(); // simuler le click
 
-    document.body.removeChild(element);
+    document.body.removeChild(element); // enlever du document
   }
   save() {
     this.download(this.files[this.selectedFile].name, this.content);
@@ -79,8 +79,8 @@ export class CodeService {
   }
   open() {
     const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.orcha';
+    input.type = 'file'; // type file pour pouvoir le charger
+    input.accept = '.orcha'; // filtrer l'extension acceptée
 
     input.onchange = (e: any) => {
 
@@ -90,19 +90,19 @@ export class CodeService {
       if (extension === 'orcha') {
         // setting up the reader
         const reader = new FileReader();
-        reader.readAsText(file, 'UTF-8');
+        reader.readAsText(file, 'UTF-8'); // lit le contenu du fichier
 
         // here we tell the reader what to do when it's done reading...
         reader.onload = (readerEvent) => {
           const target: any = readerEvent.target; // forcer le typage en any pour eviter les erreur de compilateur provoque par ts
           const filecontent = target.result;
           const filename = file.name;
-          this.addFileByName(filename, filecontent);
+          this.addFileByName(filename, filecontent); //ajouter le fichier a files
         };
       } else {
         alert('Wrong file type ! Please select a .orcha file');
       }
     };
-    input.click();
+    input.click(); // simuler le click pour lancer l'event
   }
 }
