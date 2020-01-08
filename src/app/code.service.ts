@@ -61,7 +61,8 @@ export class CodeService {
   }
   private download(filename, text) {
     const element = document.createElement('a'); // créer un elmnt html type a
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text)); // lui donner certains attribut et son contenu
+    // lui donner certains attribut et son contenu
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename); // lui donner son nom pour la propriété de download
 
     element.style.display = 'none'; // empecher de l'afficher dans la vue
@@ -97,12 +98,16 @@ export class CodeService {
           const target: any = readerEvent.target; // forcer le typage en any pour eviter les erreur de compilateur provoque par ts
           const filecontent = target.result;
           const filename = file.name;
-          this.addFileByName(filename, filecontent); //ajouter le fichier a files
+          this.addFileByName(filename, filecontent); // ajouter le fichier a files
         };
       } else {
         alert('Wrong file type ! Please select a .orcha file');
       }
     };
     input.click(); // simuler le click pour lancer l'event
+  }
+
+  format() {
+    this.content = this.content.replace(/\s+/g, ' ').trim();
   }
 }
