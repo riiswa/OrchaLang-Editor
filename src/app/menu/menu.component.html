@@ -8,7 +8,7 @@
       </a>
       <div class="dropdown-menu no-border">
         <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.add()">
-          <i class="fa fa-file"></i>New <span class="text-muted small d-none d-md-inline">Ctrl+Alt+N</span>
+          <i class="fa fa-file"></i> New <span class="text-muted small d-none d-md-inline">Ctrl+Alt+N</span>
         </a>
         <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.open()"><i class="fa fa-folder-open"></i> Open <span
           class="text-muted small d-none d-md-inline">Ctrl+O</span></a>
@@ -18,8 +18,16 @@
           class="text-muted small d-none d-md-inline">Ctrl+E</span></a>
         <a class="dropdown-item bg-dark text-light" href="#" (click)="this.codeService.saveAll()"><i class="fa fa-download"></i> Export all <span
           class="text-muted small d-none d-md-inline">Ctrl+Maj+E</span></a>
-        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.undo()"><i></i> Undo </a>
-        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.redo()"><i></i> Redo </a>
+      </div>
+
+    </div>
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+        <i class="fa fa-files-o text-light"></i> Edit
+      </a>
+      <div class="dropdown-menu no-border">
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.undo()"><i class="fa fa-undo"></i> Undo </a>
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.redo()"><i class="fa fa-redo"></i> Redo </a>
       </div>
 
     </div>
