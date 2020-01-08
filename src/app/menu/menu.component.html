@@ -26,8 +26,10 @@
         <i class="fa fa-files-o text-light"></i> Edit
       </a>
       <div class="dropdown-menu no-border">
-        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.undo()"><i class="fa fa-undo"></i> Undo </a>
-        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.redo()"><i class="fa fa-redo"></i> Redo </a>
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.undo()"><i class="fa fa-undo"></i> Undo <span
+          class="text-muted small d-none d-md-inline">Ctrl+Alt+U</span></a>
+        <a class="dropdown-item bg-dark text-light" href="#" (click)="this.historyService.redo()"><i class="fa fa-redo"></i> Redo <span
+          class="text-muted small d-none d-md-inline">Ctrl+Alt+R</span></a>
       </div>
 
     </div>
