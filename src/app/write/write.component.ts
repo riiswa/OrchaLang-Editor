@@ -12,9 +12,11 @@ import 'node_modules/codemirror/addon/hint/javascript-hint';
 import 'node_modules/codemirror/addon/hint/anyword-hint.js';
 import 'node_modules/codemirror/addon/lint/lint.js';
 import 'src/assets/js/orchalang-lint.js';
+import 'node_modules/codemirror/keymap/vim.js';
 
 import * as CodeMirror from 'codemirror';
 import {HistoryService} from '../history.service';
+import {CodeMirrorOptionService} from '../code-mirror-option.service';
 
 @Component({
   selector: 'app-write',
@@ -48,7 +50,9 @@ export class WriteComponent implements OnInit, AfterViewInit {
   };
   badgesIsEnable = true;
 
-  constructor(public codeService: CodeService, public historyService: HistoryService) {
+  constructor(public codeService: CodeService,
+              public historyService: HistoryService,
+              public codeMirrorOptionService: CodeMirrorOptionService) {
   }
 
   ngOnInit() {
@@ -62,6 +66,7 @@ export class WriteComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // @ts-ignore
     this.cm = document.querySelector('.CodeMirror').CodeMirror;
+    this.codeMirrorOptionService.cm = this.cm;
     // @ts-ignore
     const orig = CodeMirror.hint.anyword;
     // @ts-ignore
@@ -85,12 +90,14 @@ export class WriteComponent implements OnInit, AfterViewInit {
 
   toLight() {
     // @ts-ignore
-    this.cm.setOption('theme', 'elegant');
+    this.cm.setOption('theme', 'eclipse');
+    this.codeMirrorOptionService.theme = 'eclipse';
   }
 
   toDark() {
     // @ts-ignore
     this.cm.setOption('theme', 'midnight');
+    this.codeMirrorOptionService.theme = 'midnight';
   }
 
   fullScreen() {

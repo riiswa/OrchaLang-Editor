@@ -108,6 +108,6 @@ export class CodeService {
   }
 
   format() {
-    this.content = this.content.replace(/\s+/g, ' ').trim();
+    this.content = this.content.split('\n').map(x => x.replace(/\s+/g, ' ').trim()).join('\n');
   }
 }

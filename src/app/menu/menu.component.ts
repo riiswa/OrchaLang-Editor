@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CodeService} from '../code.service';
 import {RunHandlerService} from '../run-handler.service';
 import {HistoryService} from '../history.service';
+import {CodeMirrorOptionService} from '../code-mirror-option.service';
 
 
 @Component({
@@ -11,7 +12,10 @@ import {HistoryService} from '../history.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public codeService: CodeService, public runHandler: RunHandlerService, public historyService: HistoryService) {
+  constructor(public codeService: CodeService,
+              public runHandler: RunHandlerService,
+              public historyService: HistoryService,
+              public codeMirrorOptionService: CodeMirrorOptionService) {
   }
 
   ngOnInit() {

@@ -2,3 +2,8 @@
   border: unset !important;
   padding: 0;
 }
+
+.padding-side{
+  padding-left: 10px;
+  padding-right: 10px;
+}
