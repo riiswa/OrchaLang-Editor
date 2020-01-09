@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {CodeService} from './code.service';
 
 
@@ -7,10 +7,23 @@ import {CodeService} from './code.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'OrchaLang Editor';
+  loading = true;
   constructor(public codeService: CodeService) {
   }
+
+  private delay(ms: number)
+  {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async ngAfterViewInit() {
+    await this.delay(1000);
+    this.loading = false;
+  }
+
+
   @HostListener('window:keydown.control.e', ['$event']) // listener for ctrl+e
   exportHandler(event: KeyboardEvent) {
     event.preventDefault(); // override navigator shortcut

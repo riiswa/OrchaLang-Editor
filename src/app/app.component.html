@@ -5,6 +5,7 @@
   <title>{{ title }}</title>
 </head>
 <body>
+<app-loading-screen *ngIf="loading"></app-loading-screen>
 <h1 class="text-center">{{ title }} <small class="text-muted h5 font-italic d-block"> Orchestrate Human
   Activities</small></h1>
 <app-menu></app-menu>

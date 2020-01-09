@@ -19,6 +19,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 
 import { NgTerminalModule } from 'ng-terminal';
 import {HttpClientModule} from '@angular/common/http';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     ExplorerComponent,
     MenuComponent,
     WriteComponent,
-    ConsoleComponent
+    ConsoleComponent,
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,
