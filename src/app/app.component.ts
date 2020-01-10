@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, HostListener} from '@angular/core';
 import {CodeService} from './code.service';
+import {HistoryService} from './history.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {CodeService} from './code.service';
 export class AppComponent implements AfterViewInit {
   title = 'OrchaLang Editor';
   loading = true;
-  constructor(public codeService: CodeService) {
+  constructor(public codeService: CodeService, public historyService: HistoryService) {
   }
 
   private delay(ms: number)
@@ -42,10 +43,22 @@ export class AppComponent implements AfterViewInit {
     this.codeService.open();
   }
 
-  @HostListener('window:keyup.control.alt.n', ['$event']) // listener for ctrl+a
+  @HostListener('window:keyup.control.alt.n', ['$event']) // listener for ctrl+alt+n
   newHandler(event: KeyboardEvent) {
     event.preventDefault(); // override navigator shortcut
     this.codeService.add();
+  }
+
+  @HostListener('window:keyup.control.alt.u', ['$event']) // listener for ctrl+alt+r
+  undoHandler(event: KeyboardEvent) {
+    event.preventDefault(); // override navigator shortcut
+    this.historyService.undo();
+  }
+
+  @HostListener('window:keyup.control.alt.r', ['$event']) // listener for ctrl+alt+u
+  redoHandler(event: KeyboardEvent) {
+    event.preventDefault(); // override navigator shortcut
+    this.historyService.redo();
   }
 
 
