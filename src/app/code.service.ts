@@ -16,6 +16,9 @@ export class CodeService {
 
   content: string;
 
+  private copyContent: string
+  private copyName: string
+
   constructor(public cookieService: CookieService, public historyService: HistoryService) {
     this.historyService.codeService = this;
 
@@ -105,6 +108,24 @@ export class CodeService {
       }
     };
     input.click(); // simuler le click pour lancer l'event
+  }
+
+  copy(){
+    this.copyName = this.files[this.selectedFile].name
+    this.copyContent = this.files[this.selectedFile].content
+  }
+
+  paste(){
+    if (this.copyName != undefined && this.copyContent != undefined) {
+      const nameCopy: string[] = this.copyName.split('.')
+      const nameConcat: string = nameCopy[0] + '-copy.' + nameCopy[1]
+      this.addFileByName(nameConcat, this.copyContent)
+    }
+  }
+
+  duplicate(){
+    this.copy()
+    this.paste()
   }
 
   format() {
