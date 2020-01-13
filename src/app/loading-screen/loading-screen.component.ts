@@ -8,6 +8,6 @@ import {AfterViewInit, Component} from '@angular/core';
 })
 export class LoadingScreenComponent {
   title = 'OrchaLang Editor';
-constructor() {
+	constructor() {
   }
 }

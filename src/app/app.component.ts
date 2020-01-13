@@ -49,6 +49,18 @@ export class AppComponent implements AfterViewInit {
     this.codeService.add();
   }
 
+  @HostListener('window:keyup.control.atl.c', ['$event']) // listener for ctrl+o
+  copyHandler(event: KeyboardEvent) {
+    event.preventDefault(); // override navigator shortcut
+    this.codeService.copy();
+  }
+
+  @HostListener('window:keyup.control.alt.v', ['$event']) // listener for ctrl+alt+n
+  pasteHandler(event: KeyboardEvent) {
+    event.preventDefault(); // override navigator shortcut
+    this.codeService.paste();
+  }
+
   @HostListener('window:keyup.control.alt.u', ['$event']) // listener for ctrl+alt+r
   undoHandler(event: KeyboardEvent) {
     event.preventDefault(); // override navigator shortcut
