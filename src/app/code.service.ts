@@ -123,6 +123,11 @@ export class CodeService {
     }
   }
 
+  duplicate(){
+    this.copy()
+    this.paste()
+  }
+
   format() {
     this.content = this.content.split('\n').map(x => x.replace(/\s+/g, ' ').trim()).join('\n');
   }
