@@ -44,7 +44,7 @@
     const lines = text.split('\n');
     for (const [lineNumber, line] of lines.entries()) {
       const cleanLine = cleanString(line);
-      if (cleanLine === '' || cleanLine.startsWith('//')) {
+      if (cleanLine === '' || cleanLine.startsWith('//') || cleanLine.startsWith('when') || cleanLine.includes('with')) {
       } else if (cleanLine.startsWith('send')) {
         errors.push(analysis(sendSyntax, line, lineNumber))
       } else if (cleanLine.startsWith('version')) {
