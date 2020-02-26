@@ -1,6 +1,8 @@
 # OrchaLangEditor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+Forked from https://github.com/riiswa/OrchaLang-Editor. This project was made with Evann Ambroisine, Waris Radji and I.
+Ce fork est fait pour un cours de maintenance au Cegep de Matane.
 
 ## Development server
 
