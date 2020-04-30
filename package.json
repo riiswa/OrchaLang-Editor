@@ -25,7 +25,7 @@
     "bootstrap": "^4.4.1",
     "codemirror": "^5.49.2",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash.clonedeep": "^4.5.0",
     "ng-terminal": "^2.3.0",
     "ngx-bootstrap": "^5.2.0",
