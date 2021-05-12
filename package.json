@@ -23,7 +23,7 @@
     "@ctrl/ngx-codemirror": "^2.2.0",
     "angular-animations": "0.0.10",
     "bootstrap": "^4.4.1",
-    "codemirror": "^5.49.2",
+    "codemirror": "^5.58.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "lodash.clonedeep": "^4.5.0",
